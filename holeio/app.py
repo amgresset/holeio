@@ -1,4 +1,6 @@
-# from bottle import run
+import bottle
+
+from bottle import run
 import ConfigParser
 import os
 
@@ -6,6 +8,7 @@ from holeio import views  # noqa
 from holeio import watcher, downloader, db
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 if os.path.isfile('holeio.cfg'):
@@ -20,3 +23,8 @@ logging.info("INFO logging visible")
 logging.warning("WARNING logging visible")
 db.create_tables()
 db.add_history("Starting hole.io")
+
+if __name__ == "__main__":
+    run(host='localhost', port=8080)
+
+app = bottle.default_app()
