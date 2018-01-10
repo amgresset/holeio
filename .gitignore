@@ -2,5 +2,6 @@
 *.egg-info/
 *.un~
 venv/
-/fabfile.py
-/holeio.cfg
+holeio.cfg
+.DS_Store
+holeio.db
