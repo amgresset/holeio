@@ -37,7 +37,7 @@ class TorrentEventHandler(FileSystemEventHandler):
                 uri = f.read().strip()
                 print "Added magnet uri: %s" % uri
                 client.add_torrent_uri(uri, category)
-        os.rename(file_path, file_path + ".added")
+        os.remove(file_path)
         print "Let's wake up the downloader, if needed"
         downloader.wake()
 
